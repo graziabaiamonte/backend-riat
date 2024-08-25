@@ -1,9 +1,9 @@
 import express from "express";
-import cors from "cors"; // Importa cors
+import cors from "cors";
 import { createStripeSession } from "./createStripeSession.js";
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 
 // Configura CORS per permettere richieste dal tuo dominio frontend
 const corsOptions = {
@@ -14,6 +14,11 @@ const corsOptions = {
 
 app.use(cors(corsOptions)); // Applica CORS
 app.use(express.json());
+
+// Definisci una route di esempio per verificare che il server funzioni
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
 
 app.post("/create-checkout-session", async (req, res) => {
   const { amount, description } = req.body;
