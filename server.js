@@ -1,9 +1,18 @@
 import express from "express";
-import { createStripeSession } from "./createStripeSession.js"; // Assicurati che il percorso sia corretto
+import cors from "cors"; // Importa cors
+import { createStripeSession } from "./createStripeSession.js";
 
 const app = express();
 const port = process.env.PORT || 5000;
 
+// Configura CORS per permettere richieste dal tuo dominio frontend
+const corsOptions = {
+  origin: "https://www.riatarchidecor.it", // Sostituisci con il tuo dominio frontend
+  methods: "GET,POST",
+  allowedHeaders: "Content-Type",
+};
+
+app.use(cors(corsOptions)); // Applica CORS
 app.use(express.json());
 
 app.post("/create-checkout-session", async (req, res) => {
