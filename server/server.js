@@ -25,6 +25,7 @@ app.post("/create-checkout-session", async (req, res) => {
 
   try {
     const sessionId = await createStripeSession({ amount, description });
+    console.log(`Created session ID: ${sessionId}`);
     res.json({ id: sessionId });
   } catch (error) {
     res.status(500).json({ error: error.message });
