@@ -7,7 +7,7 @@ const port = process.env.PORT || 5001;
 
 // Configura CORS per permettere richieste dal tuo dominio frontend
 const corsOptions = {
-  origin: "https://www.riatarchidecor.it", // Sostituisci con il tuo dominio frontend
+  origin: "*", // Sostituisci con il tuo dominio frontend
   methods: "GET,POST",
   allowedHeaders: "Content-Type",
 };
