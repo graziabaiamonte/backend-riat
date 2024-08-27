@@ -7,7 +7,7 @@ const port = process.env.PORT || 5001;
 
 // Configura CORS per permettere richieste dal tuo dominio frontend
 const corsOptions = {
-  origin: "*", // Sostituisci con il tuo dominio frontend
+  origin: "*",
   methods: "GET,POST",
   allowedHeaders: "Content-Type",
 };
