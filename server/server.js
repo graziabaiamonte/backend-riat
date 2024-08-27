@@ -21,12 +21,12 @@ app.get("/", (req, res) => {
 });
 
 app.post("/create-checkout-session", async (req, res) => {
-  console.log("Request received at /create-checkout-session"); // Aggiungi questo per il debug
+  console.log("Request received at /create-checkout-session");
   const { amount, description } = req.body;
 
   try {
     const sessionId = await createStripeSession({ amount, description });
-    console.log(`Created session ID: ${sessionId}`); // Aggiungi questo per il debug
+    console.log(`Created session ID: ${sessionId}`);
     res.json({ id: sessionId });
   } catch (error) {
     console.error("Error creating checkout session:", error);
