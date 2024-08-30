@@ -7,7 +7,7 @@ const port = process.env.PORT || 5001;
 
 // Configura CORS per permettere richieste dal tuo dominio frontend
 const corsOptions = {
-  origin: "*",
+  origin: "https://www.riatarchidecor.it",
   methods: "GET,POST",
   allowedHeaders: "Content-Type",
 };
@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
 
 app.post("/create-checkout-session", async (req, res) => {
   console.log("Request received at /create-checkout-session");
+  console.log("Request body:", req.body);
   const { amount, description } = req.body;
 
   try {
