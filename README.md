@@ -1,0 +1,1 @@
+Cartella server per Riat Archidecor (https://www.riatarchidecor.it). Configurazione lato server per impostare checkout di Stripe con caricamento dei prodotti su wordpress (e non singolarmente su stripe stesso)
